@@ -27,5 +27,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-scroll": "^1.7.11",
+    "react-sizes": "^2.0.0",
+    "typeface-montserrat": "0.0.54"
   }
 }

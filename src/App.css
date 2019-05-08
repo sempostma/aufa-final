@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
 }
 
 .App-logo {
@@ -30,4 +29,172 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.view {
+  scroll-behavior: smooth;
+}
+
+.spaced {
+  height: calc(100vh - 100px);
+}
+
+.navbar {
+  height: 50px;
+}
+
+.navbar h1 {
+  float: left;
+  margin: 10px 0;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.navbar .languages {
+  float: right;
+  margin: 17px 0;
+  text-transform: uppercase;
+}
+
+.navbar .languages > div {
+  float: left;
+  margin-left: 7px;
+}
+
+.container {
+  margin: 0 50px;
+}
+
+.scroll-down {
+  color: #fff;
+  font-weight: 600;
+  position: absolute;
+  right: -10px;
+  bottom: 90px;
+  font-size: 0.7em;
+  transform: rotate(90deg);
+}
+
+.relative {
+  position: relative;
+}
+
+.scroll-down > * {
+  vertical-align: middle;
+}
+
+.scroll-down .arrow {
+  width: 20px;
+  margin-left: 10px;
+  font-size: 0.7em;
+}
+
+.game-container canvas {
+  opacity: 0;
+  transition: opacity 500ms ease 1s;
+}
+
+.game-container:hover canvas {
+  opacity: 1;
+}
+
+.hello {
+  font-size: 120px;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  transition: transform 500ms ease 1500ms;
+  pointer-events: none;
+}
+
+.red::before {
+  content: "";
+  background-color: #fc5956;
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  top: 0;
+  animation: goRight 800ms ease 400ms forwards;
+}
+
+@keyframes goRight {
+  from { right: 100% }
+  to { right: 0 }
+}
+
+
+.game-container:hover .hello {
+  transition: transform 500ms ease 500ms;
+  transform: translate(-100%, -50%);
+}
+
+.hello::after {
+  content: ".";
+  color: #fc5956;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  max-width: 100%;
+  width: 400px;
+  right: 100%;
+  transition: all 300ms ease;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 200;
+}
+
+.sidebar.open {
+  right: calc(100% - 400px);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.sidebar h2 {
+  cursor: pointer;
+}
+
+.sidebar-inner {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-btn {
+  position: absolute;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  transition: all 500ms ease;
+  cursor: pointer;
+}
+
+.menu-btn .line {
+  height: 3px;
+  background-color: #222;
+  margin-top: 3px;
+}
+
+.mask {
+  position: fixed;
+  right: 0;
+  left: 100%;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 200ms ease;
+  z-index: 2000;
+}
+
+.mask.open {
+  left: 400px;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.2);
 }
